@@ -15,4 +15,7 @@ The repository for the project is available here: https://github.com/StinkyMilo/
 
 ## What did I work on?
 
-[add final list here, with details]
+As listed in the game's credits, I mainly worked on:
+- Spider Programming (for Giovani, the playable spider character)
+- Animation Programming (taking the animations made by the art team and implementing them with state machines)
+- VFX (most done by me, the rest by Jay)
