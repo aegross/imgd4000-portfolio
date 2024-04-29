@@ -1,1 +1,13 @@
-[add things]
+# Challenges Faced
+
+## Aiming Issues
+...
+
+## Grounding and Jumping
+...
+
+## Splines are Hard to Work With (Visually)
+...
+
+## Animation Blueprints
+...
