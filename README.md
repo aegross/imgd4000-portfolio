@@ -4,7 +4,9 @@ A collection of all the work I completed on *Sleeping with the Roaches*, my grou
 This includes a detailed description of my role in the project, all the features I worked on, and architectural diagrams describing them (according to the requirements listed here: https://github.com/charlieroberts/imgd4000-2024/blob/main/development_portfolio.md). 
 
 ## What is *Sleeping with the Roaches*?
-Sleeping with the roaches is a co-op platformer made using Unreal Engine 5.2 for IMGD 4000 (Technical Game Development II) at WPI. This was a group project created by myself and five others (the full team is listed below). While I was not able to contribute to the project as much as I had hoped to (due to IQP, mostly), I'm still proud of the work I did, considering that my only general purpose engine experience before this was making one game for a class in Unity.
+Sleeping with the roaches is a co-op platformer made using Unreal Engine 5.2 for IMGD 4000 (Technical Game Development II) at WPI. This was a group project created by myself and five others (the full team is listed below). 
+
+While I was not able to contribute to the project as much as I had hoped to (due to IQP work, mostly), I'm still proud of the work I did, considering that my only general purpose engine experience before this was making one game for a class in Unity.
 
 Our team website, which includes downloads and a weekly blog, is available here: https://stinkymilo.github.io/TeamWebsite/ <br />
 The repository for the project is available here: https://github.com/StinkyMilo/NotABug/ <br />
