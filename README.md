@@ -26,4 +26,4 @@ I also supplied some of the audio assets we *planned* to use (for footsteps), wh
 
 I decided to tackle the bulk of the animation implementation and VFX work since I have artistic experience, but mostly because it seemed interesting. I had initially wanted to do some of the more mathematics-heavy work (such as aspects of the rope, which Milo focused on), but realized that other members of the team were more available and more interested in that work.
 
-For Giovani, I implemented his grounding checks, the web shooting mechanic (including the spline line shown to the player), and most of the basic web behaviors. 
+For Giovani, I implemented his grounding checks, the web shooting mechanic (including the spline aiming line shown to the player), and most of the basic web behaviors. 
