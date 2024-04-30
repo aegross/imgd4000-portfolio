@@ -40,10 +40,37 @@ Updating the spline mesh (every tick): <br />
 
 In order to be able to update the position of the meshes every tick, I needed to make sure there was a consistent number of spline points _and_ meshes. I could have made the number of meshes scale to the spline's length, which would have been good for textured meshes, but that didn't allow the math to work out for updating their locations. That's why I used materials instead. 
 
-_My recommendation for future 4000 students: if you're going to make visible splines whose meshes will need to move and stretch, make sure the visuals are handled with a material that won't look bad if the mesh it's on scales and stretches a lot. If you're making a visible spline that's static, make a spline with an adjustable number of meshes so that it looks best no matter what kind of material or texture you use._
+_My recommendation for future 4000 students: if you're going to make visible splines whose meshes will need to move and stretch, make sure the visuals are handled with a material that won't look bad if the mesh it's on scales and stretches a lot. You'll also need to have a conisistent number of meshes (or another system to properly handle an unknown amount). If you're making a visible spline that's static, make a spline with an adjustable number of meshes so that it looks good no matter what kind of material or texture you use._
+
+_Splines are valuable tools, but the ones in Unreal are a bit wonky to work with, and take some getting used to._
 
 ## Grounding and Jumping
-...
+In order to prevent players from flying, grounding checks are crucial. Since we didn't use Unreal's character movement components (which was because we needed to support two players; we created our own character controller and input system), we didn't have pre-created grounding checks. This meant that we had to make our own.
+
+Below is the character grounding check, used for both Giovani and Marcelo. Originally, this code was just written for Giovani, but it was refactored to be used by both characters, since Marcelo does have to "recharge" his flight ability by landing. Additionally, in order to animate jumping properly, a grounding check was necessary for both characters. <br />
+![image](https://github.com/aegross/imgd4000-portfolio/assets/48368165/53f0ec60-a895-47a4-b89a-902f1579dc22)
+
+A sphere trace is cast from the location of the center of the character's capsule to _slightly_ below the bottom of the character (due to the spheres' radii), and if there is a collision, the character is considered grounded. This was simple, but had to be tweaked multiple times due to the addition of a function to check if the character was in a web (`IsInWeb?`), along with boolean variables for animation (`IsGrounded?`) and audio (`CanFallSound`). We also had to make sure that the rope was excluded from the grounding check, since we didn't want the players to be able to jump off of the rope. Milo handled that part.
+
+While having to move and refactor the blueprint code multiple times was annoying, it ended up being the best practice in the end, so it was worth it.
+
+_My recommendation for future 4000 students: Don't build a character controller from scratch if you don't have to; the customizability is nice, but it takes up a good amount of development time. If you do, make sure that your "basic" playable character has all possible necessary features from the start! There's a lot of room for error- make sure to think of everything when debugging._
 
 ## Animation Blueprints
-...
+I'll put this plainly: Unreal's animation blueprints are both incredibly helpful **and** incredibly annoying. 
+
+Since animation blueprints get applied to a skeletal mesh and _not_ an actor directly, the flow of information is unidirectional; you can provide information (such as boolean values) to an animation blueprint from an actor, but not the other way around, as far as I know (while this isn't really necessary, it would have been useful in a couple of cases). Animation blueprints also have different functionality (as expected), which can cause some minor problems.
+
+This means that all information necessary for animating a character (knowing if they're grounded, knowing how fast they're moving, etc.) has to be either:
+- passed from the actor that the skeletal mesh is assigned to
+- determined by the code inside the blueprint itself, easiest when using Unreal's character movement components... which we didn't use.
+
+This meant that extra changes needed to be made on the character blueprint side in order to pass information to the animation blueprints. This included whether or not the character was in the air (for both Marcelo and Giovani), and whether or not the player was aiming (for Giovani only). It was only possible to get the information from the characters by casting the animation's pawn owner to Character_Moth or Character_Spider _every tick_, which worked but wasn't ideal.
+
+Marcelo's animation event graph: <br />
+![image](https://github.com/aegross/imgd4000-portfolio/assets/48368165/cc0c9039-24b9-4717-906c-2c50388b7e60)
+
+Giovani's animation event graph: <br />
+![image](https://github.com/aegross/imgd4000-portfolio/assets/48368165/0ec9f08f-765d-49e4-80d9-40ec99ed1ad4)
+
+Configuring the state machines used for determining what animations should play at what times was also more difficult than it should have been for me personally. I made the states too complex at first, with more than were necessary, which caused the machines to get stuck in cases they couldn't get out of; this happened for testing jumping FINISH
