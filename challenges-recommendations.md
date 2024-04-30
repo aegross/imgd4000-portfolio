@@ -73,9 +73,9 @@ Marcelo's animation event graph: <br />
 Giovani's animation event graph: <br />
 ![image](https://github.com/aegross/imgd4000-portfolio/assets/48368165/0ec9f08f-765d-49e4-80d9-40ec99ed1ad4)
 
-Configuring the state machines used for determining what animations should play at what times was also more difficult than it should have been for me personally. I made the states too complex at first, with more states than were necessary, which caused the machines to sometimes get stuck in cases they couldn't get out of; this happened for jumping more than anything.
+Configuring the state machines used for determining what animations should play at what times was also more difficult than it should have been for me personally; I initially made the machine too complex at first, with more states than were necessary, which caused the machines to sometimes get stuck in cases they couldn't get out of; this happened for jumping more than anything.
 
-Using Unreal's Blendspaces to mix idle, walking, and running animations for the characters was very successful, compared to using states in a state machine.
+Using Unreal's Blendspaces to mix idle, walking, and running animations for the characters was very successful, compared to using states in a state machine. I didn't try the latter approach, but I personally see little reason to have used it.
 
 Below is a video showcasing an early version of Marcelo's blendspace, which blends his walking and running animations: <br />
 https://github.com/aegross/imgd4000-portfolio/assets/48368165/a33a0f73-bb4c-479f-b588-bdf0ff4b317c
