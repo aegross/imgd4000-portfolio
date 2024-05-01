@@ -27,3 +27,10 @@ I also supplied some of the audio assets we *planned* to use (for footsteps), wh
 I decided to tackle the bulk of the animation implementation and VFX work since I have artistic experience, but mostly because it seemed interesting. I had initially wanted to do some of the more mathematics-heavy work (such as aspects of the rope, which Milo focused on), but realized that other members of the team were more available and more interested in that work.
 
 For Giovani, I implemented his grounding checks, the web shooting mechanic (including the spline aiming line shown to the player), and most of the basic web behaviors. 
+
+## Development Portfolio Contents
+
+Challenges faced, how I dealt with them, and recommendations for future students: https://github.com/aegross/imgd4000-portfolio/blob/main/challenges-recommendations.md <br />
+Lessons I learned from working on the project: https://github.com/aegross/imgd4000-portfolio/blob/main/lessons-learned.md <br />
+Architectural diagrams visualizing different parts of the game's code: https://github.com/aegross/imgd4000-portfolio/blob/main/architectural-diagrams.md <br />
+Details on our team's method of version control (GitHub): https://github.com/aegross/imgd4000-portfolio/blob/main/version-control.md <br />
