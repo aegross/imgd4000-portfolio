@@ -15,6 +15,9 @@ The repository for the project is available here: https://github.com/StinkyMilo/
 **Art**: Keenan Jones, Hayden Padula <br />
 **Tech**: Audrey Gross, Justin Ignatowski, Milo Jacobs, Owen Knizak <br />
 
+## Highlight Reel
+[INSERT VIDEO HERE]
+
 ## What was my role in the project?
 
 As listed in the game's credits, I mainly worked on:
